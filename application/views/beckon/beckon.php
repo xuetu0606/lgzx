@@ -62,20 +62,36 @@
         <div class="title">
             <div class="left">
                 <div class="line1">
-                    <span class="name">悠悠家政，专业保姆、保姆，高品质生活</span>
-                    <span class="vip"><img src="/static/images/vip/vip1.png" alt=""/></span>
-                    <span class="identify"><img src="/static/images/renzheng/yingyezhiz.png" alt=""/></span>
+                    <span class="name"><?= $news[0]['title'] ?></span>
+                    <span class="vip">
+						<?php
+							if($news[0]['vip'] == 1){
+								echo '<img src="/static/images/vip/vip1.png" alt=""/>';
+							}else{
+								echo '';
+							}
+						?>
+					</span>
+                    <span class="identify">
+						<?php
+							if($news[0]['yingyezhiz'] == 1){
+								echo '<img src="/static/images/renzheng/yingyezhiz.png" alt=""/>';
+							}else{
+								echo '';
+							}
+						?>
+					</span>
                 </div>
                 <div class="line2">
                     <span>信用等级</span><img src="/static/images/vip/yp.png" alt=""/>
                     <img src="/static/images/vip/sj.png" alt=""class="clock"/>
-                    <span class="time">今天11:20</span>
+                    <span class="time"><?= date('Y-m-d',$news[0]['addtime']) ?></span>
                     <span>|</span>
-                    <span class="pageview">500次浏览</span>
+                    <span class="pageview"><?= $news[0]['pv'] ?>次浏览</span>
                 </div>
             </div>
            <div class="right">
-            <span class="salary">100元/天</span>
+            <span class="salary"><?= $news[0]['pay'] ?><?= $news[0]['pay_unit'] ?></span>
                <a href="#"> 应聘该职位</a>
            </div>
         </div>
@@ -83,11 +99,11 @@
             <div class="scale">
                 <p>
                     <span class="name">公司名称：</span>
-                    <span class="content">悠悠家政服务有限公司</span>
+                    <span class="content"><?= $news[0]['coname'] ?></span>
                 </p>
                 <p>
                     <span class="name">职位名称：</span>
-                    <span class="content">月嫂  保姆</span>
+                    <span class="content"><?= $news[0]['job_name'] ?></span>
                 </p>
                 <p>
                     <span class="name">学历要求：</span>
@@ -99,15 +115,15 @@
                 </p>
                 <p>
                     <span class="name">工作时间：</span>
-                    <span class="content">10:00-17:00</span>
+                    <span class="content"><?= $news[0]['worktime'] ?></span>
                 </p>
                 <p>
                     <span class="name">工资结算：</span>
-                    <span class="content">月结</span>
+                    <span class="content"><?= $news[0]['pay_circle'] ?></span>
                 </p>
                 <p>
                     <span class="name">公司地址：</span>
-                    <span class="content">市南中山路7号</span>
+                    <span class="content"><?= $news[0]['address'] ?></span>
                 </p>
             </div>
              <div class="scale-right">
@@ -117,7 +133,7 @@
                  </p>
                  <p>
                      <span class="name">工作区域：</span>
-                     <span class="content">市南 市北 四方</span>
+                     <span class="content"><?= $news[0]['district_dic'] ?></span>
                  </p>
                  <p>
                      <span class="name">雇佣类型：</span>
@@ -125,7 +141,7 @@
                  </p>
                  <p>
                      <span class="name">招聘人数：</span>
-                     <span class="content">5人</span>
+                     <span class="content"><?= $news[0]['sum'] ?></span>
                  </p>
                  <p>
                      <span class="name">性别要求：</span>
@@ -133,11 +149,11 @@
                  </p>
                  <p>
                      <span class="name">联系人：</span>
-                     <span class="content">王经理</span>
+                     <span class="content"><?= $news[0]['contacts'] ?></span>
                  </p>
                  <p>
                      <span class="name">联系电话：</span>
-                     <span class="content stress">15811111111</span>
+                     <span class="content stress"><?= $news[0]['mobile'] ?></span>
                  </p>
              </div>
         </div>
@@ -148,28 +164,22 @@
             </p>
             <div class="fwjs">
                 <pre>
- 服务内容介绍
-
-            格式你怎么写她怎么排
+	<?= $news[0]['info'] ?>
                 </pre>
             </div>
             <div class="gsxq">
                 <p>
                     <span class="name">公司名称：</span>
-                    <span class="content">悠悠家政服务有限公司</span>
+                    <span class="content"><?= $news[0]['coname'] ?></span>
                 </p>
                 <p>
                     <span class="name">公司地址：</span>
-                    <span class="content">山东省青岛市黄岛区胶南华东国际商务中心</span>
+                    <span class="content"><?= $news[0]['address'] ?></span>
                 </p>
                 <p>
                     <span class="name">公司简介：</span>
-                    <span class="content">悠悠家政服务有限公司，山东省青岛市黄岛区胶南华东国际商务中心
-                    山东省青岛市黄岛区胶南华东国际商务中心，
-                    山东省青岛市黄岛区胶南华东国际商务中心
-                    山东省青岛市黄岛区胶南华东国际商务中心
-                        山东省青岛市黄岛区胶南华东国际商务中心
-
+                    <span class="content">
+						<?= $news[0]['co_info'] ?>
                     </span>
                 </p>
             </div>
