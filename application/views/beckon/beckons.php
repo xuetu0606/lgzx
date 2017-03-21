@@ -202,7 +202,7 @@
                             </span>
                             <span class="identify">
                                 <?php  
-                                    if($item['flag'] == 1){
+                                    if($item['is_real'] == 1){
                                         echo '<img src="/static/images/renzheng/yingyezhiz.png" alt=""/>';
                                     }
                                 ?>
@@ -250,11 +250,36 @@
 <script src="/static/js/head-foot.js"></script>
 <script src="/static/js/workInfor1.js"></script>
 <script type="text/javascript">
+    var job_code = false;
+    var quyu = false;
+    var gongzi = false;
+    var jiesuan = false;
+    var fbsj = false;
+    var renzheng = false;
+    var xinyong = false;
     function next(obj){
         console.log(obj);
-        $.get('<?php echo site_url('beckon/getBeckonsByParam'); ?>/'+obj.id+'/'+obj.name, function(str){
+        if(obj.id == 'job'){
+           job_code = obj.name;
+        }else if(obj.id == 'quyu'){
+            quyu = obj.name;
+        }else if(obj.id == 'gongzi'){
+           gongzi = obj.name;
+        }else if(obj.id == 'jiesuan'){
+            jiesuan = obj.name;
+        }else if(obj.id == 'fbsj'){
+            fbsj = obj.name;
+        }else if(obj.id == 'renzheng'){
+            renzheng = obj.name;
+        }else if(obj.id == 'xinyong'){
+            xinyong = obj.name;
+        }
+        $.get('<?php echo site_url('beckon/getBeckonsByParam'); ?>?job_code='+job_code+'&quyu='+quyu+'&gongzi='+gongzi+'&jiesuan='+jiesuan+'&fbsj='+fbsj+'&renzheng='+renzheng+'&xinyong='+xinyong, function(str){
             console.log(str);
+            // var data = eval('(' + str + ')');
+            // console.log(data);
         });
     }
+
 </script>
 </html>
