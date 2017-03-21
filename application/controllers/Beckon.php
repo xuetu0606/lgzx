@@ -19,8 +19,9 @@
 			//将一个数组遍历成一个个以key命名的值
 			extract($_REQUEST);
 			$list = $this->beckon_model->getBeckons($job_code,$quyu,$gongzi,$jiesuan,$fbsj,$renzheng,$xinyong);
-			$str = json_encode($list);
-			echo $str;
+			// $str = json_encode($list);
+			// echo $str;
+			echo $list;
 		}
 		//打开招零工详情页
 		public function toBeckon(){

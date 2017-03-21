@@ -71,7 +71,7 @@
                         '<div class="type zhiye" id="'.$item['id'].'">
                             <span>职业：</span>
                             <ul>
-                                <li><a href="javascript:void(0);" id="job" name="0" onclick="next(this);">不限</a></li>';
+                                <li><a href="javascript:void(0);" id="job" name="fenlei" onclick="next(this);">不限</a></li>';
                                 foreach($job_type as $item2){
                                     if($item2['pre_id'] == $item['id']){
                                         echo '<li><a href="javascript:void(0);" id="job" name="'.$item2['id'].'" onclick="next(this);">'.$item2['name'].'</a></li>';
@@ -88,7 +88,7 @@
                         '<div class="type gongzhong" id="'.$item['id'].'">
                             <span>工种：</span>
                             <ul>
-                                <li><a href="javascript:void(0);" id="job" name="0" onclick="next(this);">不限</a></li>';
+                                <li><a href="javascript:void(0);" id="job" name="zhiye" onclick="next(this);">不限</a></li>';
                                 foreach($job_type as $item2){
                                     if($item2['pre_id'] == $item['id']){
                                         echo '<li><a href="javascript:void(0);" id="job" name="'.$item2['id'].'" onclick="next(this);">'.$item2['name'].'</a></li>';
@@ -250,17 +250,36 @@
 <script src="/static/js/head-foot.js"></script>
 <script src="/static/js/workInfor1.js"></script>
 <script type="text/javascript">
-    var job_code = false;
-    var quyu = false;
-    var gongzi = false;
-    var jiesuan = false;
-    var fbsj = false;
-    var renzheng = false;
-    var xinyong = false;
+    var fenlei = 0;
+    var zhiye = 0;
+    var gongzhong = 0;
+    var job_code = 0;
+    var quyu = 0;
+    var gongzi = 0;
+    var jiesuan = 0;
+    var fbsj = 0;
+    var renzheng = 0;
+    var xinyong = 0;
     function next(obj){
-        console.log(obj);
-        if(obj.id == 'job'){
-           job_code = obj.name;
+        console.log(obj.id);
+        console.log(obj.name);
+        console.log(obj.title);
+        console.log('hahahahah');
+        if(obj.title == '分类' && obj.name){
+            job_code = obj.name;
+            obj.name = fenlei;
+        }else if (obj.title == '职业' && obj.name) {
+            job_code = obj.name;
+            obj.name = zhiye;
+        }else if (obj.title == '工种' && obj.name) {
+            job_code = obj.name;
+            obj.name = gongzhong;
+        }else if(obj.title == '分类' && ! obj.name){
+            job_code = 0;
+        }else if(obj.title == '职业' && ! obj.name){
+            job_code = fenlei;
+        }else if(obj.title == '工种' && ! obj.name){
+            job_code = zhiye;
         }else if(obj.id == 'quyu'){
             quyu = obj.name;
         }else if(obj.id == 'gongzi'){
@@ -270,12 +289,22 @@
         }else if(obj.id == 'fbsj'){
             fbsj = obj.name;
         }else if(obj.id == 'renzheng'){
-            renzheng = obj.name;
+            if(renzheng){
+                renzheng = 0;
+            }else{
+                renzheng = obj.name;
+            }
         }else if(obj.id == 'xinyong'){
-            xinyong = obj.name;
+            if(xinyong){
+                xinyong = 0;
+            }else{
+                xinyong = obj.name;
+            }
         }
-        $.get('<?php echo site_url('beckon/getBeckonsByParam'); ?>?job_code='+job_code+'&quyu='+quyu+'&gongzi='+gongzi+'&jiesuan='+jiesuan+'&fbsj='+fbsj+'&renzheng='+renzheng+'&xinyong='+xinyong, function(str){
-            console.log(str);
+        var url = '<?php echo site_url('beckon/getBeckonsByParam'); ?>?job_code='+job_code+'&quyu='+quyu+'&gongzi='+gongzi+'&jiesuan='+jiesuan+'&fbsj='+fbsj+'&renzheng='+renzheng+'&xinyong='+xinyong;
+        console.log(url);
+        $.get(url, function(str){
+            // console.log(str);
             // var data = eval('(' + str + ')');
             // console.log(data);
         });

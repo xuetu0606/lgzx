@@ -52,86 +52,100 @@
 	    //获取招零工信息
 	    public function getBeckons($job_code = false ,$quyu = false ,$gongzi = false ,$jiesuan = false ,$fbsj = false ,$renzheng = false ,$xinyong = false){
 	    	$sql = "select 
-						id,
-						uid,
-						job_code,
-						city_id,
-						district_id,
-						title,
-						pay,
-						pay_unit,
-						pay_circle,
-						sum,
-						worktime,
-						contacts,
-						mobile,
-						address,
-						info,
-						flag,
-						pv,
-						addtime,
-						updatetime,
-						flushtime
+						i.id as id,
+						i.uid as uid,
+						i.job_code as job_code,
+						i.city_id as city_id,
+						i.district_id as district_id,
+						i.title as title,
+						i.pay as pay,
+						i.pay_unit as pay_unit,
+						i.pay_circle as pay_circle,
+						i.sum as sum,
+						i.worktime as worktime,
+						i.contacts as contacts,
+						i.mobile as mobile,
+						i.address as address,
+						i.info as info,
+						i.flag as flag,
+						i.pv as pv,
+						i.addtime as addtime,
+						i.updatetime as updatetime,
+						i.flushtime as flushtime,
+						u.credit3 as credit3
 					from
-						invite_list
+						invite_list i
+						LEFT OUTER JOIN
+						userlist u
+						ON i.uid = u.uid
 					where 
 						1=1";
-			$arr
+			// $array_job_code = array();
+			// $array_renzheng = array();
 			if($job_code){
 				$job_code_sql = "select level from job_type where id=".$job_code;
 				$result = $this->db->query($job_code_sql);
 				$list = $result->result_array();
 				switch($list[0]['level']){
 					case 1 :
-						$job_code_sql = "select id from job_type pre_pre_id=".$job_code;
+						$job_code_sql = "select id from job_type where pre_pre_id=".$job_code;
 						$result = $this->db->query($job_code_sql);
 						$list = $result->result_array();
 						foreach($list as $item){
-							$sql.=" or job_code=".$item['uid'];
+							$sql.=" or i.job_code=".$item['id'];
+							// $array_job_code[] = $item['uid'];
+							// var_dump($item);
 						}
-						breack;
+						break ;
 					case 2 :
-						$job_code_sql = "select id from job_type pre_id=".$job_code;
+						$job_code_sql = "select id from job_type where pre_id=".$job_code;
 						$result = $this->db->query($job_code_sql);
 						$list = $result->result_array();
 						foreach($list as $item){
-							$sql.=" or job_code=".$item['uid'];
+							$sql.=" or i.job_code=".$item['id'];
+							// $array_job_code[] = $item['uid'];
 						}
-						breack;
+						break ;
 					case 3 :
-						$sql.=" and job_code=".$job_code;
-						breack;
+						$sql.=" and i.job_code=".$job_code;
+						// $array_job_code[] = $job_code;
+						break ;
 				}
 			}
 			if($quyu){
-				$sql.=" and district_id=".$quyu;
+				$sql.=" and i.district_id=".$quyu;
 			}
 			if($gongzi){
 				if($gongzi == 50){
-					$sql.=" and pay<50";
+					$sql.=" and i.pay<50";
 				}else if($gongzi == 100){
-					$sql.=" and pay>50 and pay<100";
+					$sql.=" and i.pay>50 and pay<100";
 				}else if($gongzi == 'num'){
-					$sql.=" and pay>100";
+					$sql.=" and i.pay>100";
 				}
 			}
 			if($jiesuan){
-				$sql.=" and pay_circle=".$jiesuan;
+				$sql.=" and i.pay_circle=".$jiesuan;
 			}
 			if($fbsj){
-				$sql.=" and current_time-addtime > 1*24*60*60*1000*7*".$fbsj;
+				$sql.=" and i.current_time-addtime > 1*24*60*60*1000*7*".$fbsj;
 			}
 			if($renzheng){
 				$renzheng_sql = "select uid from userlist where is_real=1";
-				$result = $this->db->query($job_code_sql);
-				$list = $result->result_array();
-				foreach($list as $item){
-					$sql.=" or uid=".$item['uid'];
+				$result = $this->db->query($renzheng_sql);
+				$query = $result->result_array();
+				echo '<pre>';
+				var_dump($query);
+				echo '</pre>';
+				foreach($query as $item){
+					$sql.=" or u.uid=".$item['uid'];
+					// $array_renzheng[] = $item['uid'];
 				}
 			}
 			if($xinyong){
-
+				$sql.=" ORDER BY credit3 ";
 			}
+			return $sql;
 	    	$result = $this->db->query($sql);
 			$list = $result->result_array();
 			for($i = 0 ; $i < count($list) ; $i++){
@@ -158,7 +172,7 @@
 				$name = $result->result_array();
 				$list[$i]['is_real'] = $name[0]['is_real'];
 			}
-			return $list;
+			//return $list;
 	    }
 		//查询一条数据
 		public function find($uid){
