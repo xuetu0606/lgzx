@@ -1,0 +1,60 @@
+html,
+body,
+section,
+div,
+p,
+span,
+img,
+input,
+form,
+a {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+a,
+span {
+  display: inline-block;
+  text-decoration: none;
+}
+a:hover {
+  cursor: pointer;
+}
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  outline: none;
+  appearance: none;
+  border-width: 0;
+}
+input:-moz-placeholder {
+  color: #dbdbdb;
+}
+input::-webkit-input-placeholder {
+  color: #dbdbdb;
+}
+input:-ms-input-placeholder {
+  color: #dbdbdb;
+}
+input::-moz-placeholder {
+  color: #dbdbdb;
+}
+ul {
+  margin: 0;
+  padding: 0;
+}
+ul li {
+  display: inline-block;
+  list-style: none;
+}
+section {
+  width: 1190px;
+  margin: 0 auto;
+}
+body {
+  font-family: "Lucida Grande", "黑体", "微软雅黑" !important;
+  background-color: #eeeeee !important;
+}
+body .stress {
+  color: #ff3c5a !important;
+}

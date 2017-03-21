@@ -1,0 +1,193 @@
+#hidebg {
+  position: absolute;
+  left: 0;
+  top: 8.9rem;
+  background-color: #595757;
+  width: 100%;
+  filter: alpha(opacity=60);
+  opacity: .6;
+  z-index: 2;
+}
+div.hidebox {
+  width: 90%;
+  margin-left: 5%;
+  font-size: 1.2rem;
+  position: absolute;
+  top: 9rem;
+  z-index: 3;
+  background-color: transparent;
+}
+div.hidebox .fl {
+  float: left;
+  margin-left: .5rem;
+}
+div.hidebox .fr {
+  float: right;
+  margin-right: 2rem;
+}
+div.hidebox div.category {
+  position: relative;
+  box-sizing: border-box;
+  height: 2.6rem;
+  line-height: 2.6rem;
+  padding-left: 1rem;
+  border-bottom: solid 1px #c9caca;
+}
+div.hidebox div.category span.you {
+  position: absolute;
+  left: 80%;
+  top: 0%;
+  font-size: 1.3rem;
+}
+div.hidebox div.category a.categorya {
+  display: block;
+  height: 2.6rem;
+  line-height: 2.6rem;
+  width: 100%;
+}
+#hide1 {
+  height: 26rem;
+}
+#hide1 div.areaLeft,
+#hide1 div.countyRight {
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+}
+#hide1 div.areaLeft div.scroll,
+#hide1 div.countyRight div.scroll {
+  width: 102%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 5rem;
+}
+#hide1 div.areaLeft div.scroll div.category,
+#hide1 div.countyRight div.scroll div.category {
+  display: block!important;
+  width: 100%;
+}
+#hide1 div.areaLeft div.scroll div.category span,
+#hide1 div.countyRight div.scroll div.category span {
+  display: inline-block;
+  height: 2.6rem;
+  line-height: 2.6rem;
+  color: #9fa0a0;
+}
+#hide1 div.areaLeft div.scroll div.category .changeC,
+#hide1 div.countyRight div.scroll div.category .changeC {
+  color: #00b4ff;
+}
+#hide1 div.areaLeft div.scroll .changeBc,
+#hide1 div.countyRight div.scroll .changeBc {
+  background-color: #efefef;
+}
+#hide1 div.countyRight {
+  display: none;
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  top: 0;
+}
+#hide1 div.countyRight .category {
+  border-left: solid 1px #9fa0a0;
+}
+#hide2 {
+  height: 26rem;
+}
+#hide2 div.industryLeft,
+#hide2 div.professionRight,
+#hide2 div.lowerLevel {
+  width: 100%;
+  overflow: hidden;
+  background-color: #fff;
+}
+#hide2 div.industryLeft div.scroll,
+#hide2 div.professionRight div.scroll,
+#hide2 div.lowerLevel div.scroll {
+  width: 102%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  padding-right: 5rem;
+}
+#hide2 div.industryLeft div.scroll div.category span,
+#hide2 div.professionRight div.scroll div.category span,
+#hide2 div.lowerLevel div.scroll div.category span {
+  display: inline-block;
+  height: 2.6rem;
+  line-height: 2.6rem;
+  color: #9fa0a0;
+}
+#hide2 div.industryLeft div.scroll div.category .changeC,
+#hide2 div.professionRight div.scroll div.category .changeC,
+#hide2 div.lowerLevel div.scroll div.category .changeC {
+  color: #00b4ff;
+}
+#hide2 div.industryLeft div.scroll .changeBc,
+#hide2 div.professionRight div.scroll .changeBc,
+#hide2 div.lowerLevel div.scroll .changeBc {
+  background-color: #efefef;
+}
+#hide2 div.professionRight {
+  display: none;
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  top: 0;
+}
+#hide2 div.professionRight .category {
+  border-left: solid 1px #9fa0a0;
+}
+#hide2 div.lowerLevel {
+  display: none;
+  position: absolute;
+  left: 66%;
+  width: 33%;
+  top: 0;
+}
+#hide2 div.lowerLevel .category {
+  border-left: solid 1px #9fa0a0;
+}
+#hide3 form {
+  background-color: #fff;
+}
+#hide3 div.category span {
+  color: #00b4ff;
+  display: inline-block;
+  width: 7.5rem;
+  text-align: right;
+}
+#hide3 input[type='button'],
+#hide3 input[type='reset'] {
+  height: 2rem;
+  line-height: 2rem;
+  color: #00b4ff;
+  border: none;
+  background-color: #c9caca ;
+  font-size: 1.1rem;
+}
+#hide3 input[type='reset'] {
+  color: #ff3c5a;
+  float: left;
+  margin-left: .5rem;
+}
+#hide3 input[type='button'] {
+  float: right;
+  margin-right: 2rem;
+}
+#hide3 .category:last-child {
+  background-color: #c9caca ;
+}
+#hide3 input[type='radio'] {
+  margin-left: 1rem;
+}
+#hide4 {
+  background-color: #fff;
+}
+#hide4 div.category .changeC {
+  color: #00b4ff;
+}
+#hide4 .changeBc {
+  background-color: #efefef;
+}

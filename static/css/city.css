@@ -1,0 +1,54 @@
+.main ul {
+  padding: 0;
+  margin: 0;
+}
+.main ul li {
+  display: block;
+}
+.main #letter p {
+  height: 3rem;
+  line-height: 3rem;
+  background-color: #f3f3f3;
+  padding-left: 1rem;
+  font-size: 1.8rem;
+  color: #B3B3B3;
+}
+.main #letter div.l {
+  border: solid 1px #FF6C00;
+}
+.main #letter div.l ul li {
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+}
+.main #letter div.l ul li a {
+  display: inline-block;
+  width: 4rem;
+  height: 4rem;
+  text-align: center;
+  line-height: 2rem;
+  font-size: 1.4rem;
+}
+.main .demo p {
+  height: 3rem;
+  line-height: 3rem;
+  background-color: #f3f3f3;
+  padding-left: 1rem;
+  font-size: 1.8rem;
+  color: #B3B3B3;
+}
+.main .demo div.ul {
+  background-color: #fff;
+}
+.main .demo div.ul ul {
+  border: solid 1px #ddddde;
+  border-left: none;
+  border-right: none;
+}
+.main .demo div.ul ul li {
+  margin-left: 1.4rem;
+  height: 4rem;
+  line-height: 4rem;
+  border-bottom: solid 1px #ddddde;
+  font-size: 1.6rem;
+}

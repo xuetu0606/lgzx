@@ -1,0 +1,107 @@
+body section {
+  padding-bottom: 1rem;
+}
+body section p.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-bottom: solid 2px #ff3c5a;
+  padding: .6rem 0 .4rem 1rem;
+}
+body section div.infor {
+  margin-top: 1rem;
+  padding-left: .5rem;
+  box-sizing: border-box;
+  width: 100%;
+}
+body section div.infor div.portrait {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto;
+}
+body section div.infor div.portrait a {
+  display: block;
+  width: 6rem;
+  height: 6rem;
+}
+body section div.infor div.portrait a img {
+  width: inherit;
+  height: inherit;
+  border-radius: 50%;
+}
+body section div.infor div.logo {
+  text-align: center;
+  margin: 1rem;
+}
+body section div.infor div.message {
+  display: inline-block;
+  box-sizing: border-box;
+  width: 80%;
+  padding: .3rem;
+  font-size: 1.1rem;
+  overflow: hidden;
+  margin-left: 3rem;
+}
+body section div.infor div.message div.detail {
+  height: 1.9rem;
+  width: 100%;
+  margin: .5rem;
+}
+body section div.infor div.message div.detail div span.hui {
+  color: #c7c4c4;
+}
+body section div.infor div.message div.detail div span img {
+  vertical-align: middle;
+  width: 1rem;
+  height: 2rem;
+}
+body section div.infor div.message div.detail div a {
+  color: #0030ff;
+  font-size: 1rem;
+  margin-right: .8rem !important;
+}
+body section div.infor div.message div.detail div .stress {
+  color: #ff3c5a;
+}
+body section div.mine {
+  margin-top: 1rem;
+  padding-left: 1.5rem;
+  box-sizing: border-box;
+  width: 80%;
+  margin-left: 3rem;
+}
+body section div.mine div.list {
+  width: 100%;
+  overflow: hidden;
+}
+body section div.mine div.list input[type=button] {
+  display: inline-block;
+  margin: 1rem 40%;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 1.1rem;
+  width: 3.6rem;
+  height: 2.2rem;
+  line-height: 2.2rem;
+  background-color: #ff3c5a;
+  color: #fff;
+  border-radius: 6px;
+}
+body section div.mine div.list p {
+  display: inline-block;
+  width: 8rem;
+  height: 3.2rem;
+  font-size: 1.1rem;
+}
+body section div.mine div.list p img {
+  vertical-align: middle;
+  width: 1.7rem;
+  height: 1.6rem;
+}
+body section div.mine div.list p span {
+  margin-left: .4rem;
+  vertical-align: middle;
+}
+body section div.service-content {
+  box-sizing: border-box;
+  width: 100%;
+}

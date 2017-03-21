@@ -1,0 +1,36 @@
+body section {
+  padding-bottom: 1rem;
+}
+body section p.title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #ff3c5a;
+  padding: .6rem 0 .4rem 1rem;
+}
+body section p.title span {
+  margin-left: 35%;
+  color: #fff;
+}
+body section p.title a {
+  color: #fff;
+}
+body section p.title2 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #fff;
+  padding: .6rem 0 .4rem 1rem;
+  border-bottom: solid 1px #aaaaaa;
+}
+body section p.title2 span {
+  margin-left: 35%;
+}
+body section p.title3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background-color: #fff;
+  padding: .6rem 0 .4rem 1rem;
+  border-bottom: solid 1px #ff3c5a;
+}
+body section p.title3 span {
+  margin-left: 5%;
+}

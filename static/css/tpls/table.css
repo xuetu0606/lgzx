@@ -1,0 +1,31 @@
+table {
+  width: 100%;
+  border: solid 1px #e6e6e6;
+  font-size: 1.1rem;
+}
+table tr td,
+table tr th {
+  border: solid 1px #e6e6e6;
+  height: 2.6rem;
+  padding-left: .2rem;
+}
+table tr td a,
+table tr th a {
+  color: #0036ff;
+  text-decoration: underline;
+}
+/*table tr th:first-child {
+  width: 9rem;
+}
+table tr th:nth-child(2) {
+  width: 5rem;
+}
+table tr th:nth-child(3) {
+  width: 6rem;
+}*/
+table tr th {
+  background-color: #f2f2f4;
+}
+table tr td {
+  font-size: 1rem;
+}

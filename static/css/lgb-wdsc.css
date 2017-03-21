@@ -1,0 +1,120 @@
+section div.main div.body div.content .scxx,
+section div.main div.body div.content .llg {
+  padding: 40px;
+  box-sizing: border-box;
+}
+section div.main div.body div.content .scxx table,
+section div.main div.body div.content .llg table {
+  border-collapse: collapse;
+}
+section div.main div.body div.content .scxx table thead tr,
+section div.main div.body div.content .llg table thead tr {
+  background-color: #ededed;
+}
+section div.main div.body div.content .scxx table thead tr th,
+section div.main div.body div.content .llg table thead tr th {
+  font-weight: bold;
+  text-align: center;
+  width: 270px;
+  height: 20px;
+}
+section div.main div.body div.content .scxx table tbody tr,
+section div.main div.body div.content .llg table tbody tr {
+  border-bottom: solid 1px #ededed;
+}
+section div.main div.body div.content .scxx table tbody tr td,
+section div.main div.body div.content .llg table tbody tr td {
+  line-height: 24px;
+  padding: 10px 0;
+  width: 270px;
+  text-align: center;
+}
+section div.main div.body div.content .scxx table tbody tr td a,
+section div.main div.body div.content .llg table tbody tr td a {
+  color: #556f7b;
+}
+section div.main div.body div.content .llg {
+  display: none;
+}
+section div.main div.body div.content .pj table thead tr td,
+section div.main div.body div.content .pj table tbody tr td,
+section div.main div.body div.content .pj table thead tr th,
+section div.main div.body div.content .pj table tbody tr th {
+  width: 206px;
+}
+section div.main div.body div.content .xxwj {
+  padding-left: 20px !important;
+}
+section div.main div.body div.content .xxwj form div.acheck {
+  margin-top: 40px;
+  margin-left: 10px;
+}
+section div.main div.body div.content .xxwj form div.acheck .del {
+  margin-left: 30px;
+  width: 40px;
+  height: 18px;
+  line-height: 18px;
+  text-align: center;
+  background-color: #556f7b;
+  color: #ffffff;
+}
+section div.main div.body div.content .rzgl table thead tr td,
+section div.main div.body div.content .rzgl table tbody tr td,
+section div.main div.body div.content .rzgl table thead tr th,
+section div.main div.body div.content .rzgl table tbody tr th {
+  width: 430px;
+  text-align: left;
+  padding-left: 20px;
+  box-sizing: border-box;
+}
+section div.main div.body div.content .rzgl table thead tr td a,
+section div.main div.body div.content .rzgl table tbody tr td a,
+section div.main div.body div.content .rzgl table thead tr th a,
+section div.main div.body div.content .rzgl table tbody tr th a {
+  margin-left: 6px;
+}
+section div.main div.body div.content .rzgl table thead tr td img,
+section div.main div.body div.content .rzgl table tbody tr td img,
+section div.main div.body div.content .rzgl table thead tr th img,
+section div.main div.body div.content .rzgl table tbody tr th img {
+  vertical-align: middle;
+  width: 22px;
+  height: 22px;
+}
+section div.main div.body div.content .rzgl table thead tr td .rz,
+section div.main div.body div.content .rzgl table tbody tr td .rz,
+section div.main div.body div.content .rzgl table thead tr th .rz,
+section div.main div.body div.content .rzgl table tbody tr th .rz,
+section div.main div.body div.content .rzgl table thead tr td .wrz,
+section div.main div.body div.content .rzgl table tbody tr td .wrz,
+section div.main div.body div.content .rzgl table thead tr th .wrz,
+section div.main div.body div.content .rzgl table tbody tr th .wrz {
+  color: #3cd3ff;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+section div.main div.body div.content .rzgl table thead tr td .wrz,
+section div.main div.body div.content .rzgl table tbody tr td .wrz,
+section div.main div.body div.content .rzgl table thead tr th .wrz,
+section div.main div.body div.content .rzgl table tbody tr th .wrz {
+  color: #999;
+}
+section div.main div.body div.content div.date {
+  width: 600px;
+  margin: 40px auto;
+  margin-bottom: 0px;
+}
+section div.main div.body div.content div.date form label {
+  width: 50px;
+  font-weight: bold;
+  text-align: center;
+}
+section div.main div.body div.content div.date form img {
+  margin-left: 6px;
+  vertical-align: middle;
+  width: 24px;
+  height: 24px;
+}
+section div.main div.body div.content .third {
+  display: none;
+}

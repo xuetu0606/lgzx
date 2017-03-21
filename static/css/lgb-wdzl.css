@@ -1,0 +1,116 @@
+section div.main div.body div.content div.wdzl {
+  margin-top: 40px;
+}
+section div.main div.body div.content div.wdzl form {
+  width: 600px;
+  margin: 0 auto;
+}
+section div.main div.body div.content div.wdzl form div.form-group a {
+  margin-left: 20px;
+  font-size: 16px;
+  color: #556f7b;
+}
+section div.main div.body div.content div.wdzl form div.form-group span {
+  font-size: 16px;
+}
+section div.main div.body div.content div.wdzl form label {
+  font-size: 16px;
+}
+section div.main div.body div.content div.wdzl div.tx {
+  width: 200px;
+  height: 200px;
+  margin: 0px auto;
+  margin-bottom: 40px;
+}
+section div.main div.body div.content div.wdzl div.tx img {
+  width: 200px;
+  height: 190px;
+}
+section div.main div.body div.content div.wdzl div.tx label.file {
+  font-size: 16px;
+  color: #999;
+  text-align: center;
+  width: 80px;
+  height: 24px;
+  line-height: 24px;
+  border: solid 1px #556f7b;
+  margin: 10px 60px;
+}
+section div.main div.body div.content div.wdzl div.tx label.file:hover {
+  cursor: pointer;
+}
+section div.main div.body div.content div.zlg {
+  display: none;
+}
+section div.main div.body div.content div.bdyx,
+section div.main div.body div.content .ghyx,
+section div.main div.body div.content .bdsj,
+section div.main div.body div.content .ghsj {
+  margin: 80px 160px;
+}
+section div.main div.body div.content div.bdyx p.txt,
+section div.main div.body div.content .ghyx p.txt,
+section div.main div.body div.content .bdsj p.txt,
+section div.main div.body div.content .ghsj p.txt {
+  color: #ff3c5a;
+  margin-top: 10px;
+  font-size: 16px;
+}
+section div.main div.body div.content div.ghyx {
+  margin: 80px 160px;
+}
+section div.main div.body div.content div.ghyx p.buzhou {
+  text-align: center;
+}
+section div.main div.body div.content div.ghyx p.buzhou span {
+  font-size: 18px;
+  color: #999;
+  width: 100px;
+}
+section div.main div.body div.content div.ghyx p.buzhou span:nth-child(even) {
+  font-weight: bold;
+  font-size: 22px;
+}
+section div.main div.body div.content div.ghyx span {
+  font-size: 16px;
+}
+section div.main div.body div.content div.ghyx form {
+  margin-left: 100px;
+}
+section div.main div.body div.content div.success {
+  width: 200px;
+  margin: 0 auto;
+}
+section div.main div.body div.content div.success span {
+  font-size: 16px;
+  vertical-align: middle;
+}
+section div.main div.body div.content div.success img {
+  vertical-align: middle;
+  margin-right: 10px;
+}
+section div.main div.body div.content span.fs {
+  width: 100px;
+  height: 28px;
+  text-align: center;
+  color: #999;
+  border: solid 1px #556f7b;
+  font-size: 16px;
+  line-height: 28px;
+  border-radius: 4px;
+  margin-left: 10px;
+}
+section div.main div.body div.content span.fs:hover {
+  cursor: pointer;
+}
+section div.main div.body div.content span.getyzm {
+  width: 130px;
+}
+section div.main div.body div.content span.getyzm.djh {
+  background-color: #ff3c5a;
+  color: #ffffff;
+  border: solid 1px #ff3c5a;
+}
+section div.main div.body div.content form {
+  margin: 40px auto;
+}
