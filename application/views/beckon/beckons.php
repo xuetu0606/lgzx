@@ -54,11 +54,11 @@
             <div class="type fenlei">
                 <span>分类：</span>
                 <ul>
-                    <li><a href="javascript:void(0);" id="job" name="0" onclick="next(this);">不限</a></li>
+                    <li><a href="javascript:void(0);" title="分类" id="job" name="0" onclick="next(this);">不限</a></li>
                     <?php 
                         foreach($job_type as $item){
                             if($item['level'] == 1){
-                                echo '<li><a href="javascript:void(0);" id="job" name="'.$item['id'].'" onclick="next(this);">'.$item['name'].'</a></li>';
+                                echo '<li><a href="javascript:void(0);" title="分类" id="job" name="'.$item['id'].'" onclick="next(this);">'.$item['name'].'</a></li>';
                             }
                         }
                     ?>
@@ -71,10 +71,10 @@
                         '<div class="type zhiye" id="'.$item['id'].'">
                             <span>职业：</span>
                             <ul>
-                                <li><a href="javascript:void(0);" id="job" name="fenlei" onclick="next(this);">不限</a></li>';
+                                <li><a href="javascript:void(0);" title="职业" id="job" name="fenlei" onclick="next(this);">不限</a></li>';
                                 foreach($job_type as $item2){
                                     if($item2['pre_id'] == $item['id']){
-                                        echo '<li><a href="javascript:void(0);" id="job" name="'.$item2['id'].'" onclick="next(this);">'.$item2['name'].'</a></li>';
+                                        echo '<li><a href="javascript:void(0);" title="职业" id="job" name="'.$item2['id'].'" onclick="next(this);">'.$item2['name'].'</a></li>';
                                     }
                                 }
                         echo
@@ -88,10 +88,10 @@
                         '<div class="type gongzhong" id="'.$item['id'].'">
                             <span>工种：</span>
                             <ul>
-                                <li><a href="javascript:void(0);" id="job" name="zhiye" onclick="next(this);">不限</a></li>';
+                                <li><a href="javascript:void(0);" title="工种" id="job" name="zhiye" onclick="next(this);">不限</a></li>';
                                 foreach($job_type as $item2){
                                     if($item2['pre_id'] == $item['id']){
-                                        echo '<li><a href="javascript:void(0);" id="job" name="'.$item2['id'].'" onclick="next(this);">'.$item2['name'].'</a></li>';
+                                        echo '<li><a href="javascript:void(0);" title="工种" id="job" name="'.$item2['id'].'" onclick="next(this);">'.$item2['name'].'</a></li>';
                                     }
                                 }
                         echo
@@ -186,7 +186,7 @@
                 </div>
             </form>
         </div>
-        <div class="information">
+        <div class="information" id="beckons">
             <?php foreach($beckons as $item):?>
                 <div class="type">
                     <img src="<?= $item['coimg'] ?>" alt="" class="tx"/>
@@ -261,25 +261,25 @@
     var renzheng = 0;
     var xinyong = 0;
     function next(obj){
-        console.log(obj.id);
-        console.log(obj.name);
-        console.log(obj.title);
-        console.log('hahahahah');
         if(obj.title == '分类' && obj.name){
+            fenlei = obj.name;
             job_code = obj.name;
-            obj.name = fenlei;
         }else if (obj.title == '职业' && obj.name) {
-            job_code = obj.name;
-            obj.name = zhiye;
+            if(obj.name == "fenlei"){
+                job_code = fenlei;
+            }else{
+                zhiye = obj.name;
+                job_code = obj.name;
+            }
         }else if (obj.title == '工种' && obj.name) {
-            job_code = obj.name;
-            obj.name = gongzhong;
+            if(obj.name == "zhiye"){
+                job_code = zhiye;
+            }else{
+                gongzhong = obj.name;
+                job_code = obj.name;
+            }
         }else if(obj.title == '分类' && ! obj.name){
             job_code = 0;
-        }else if(obj.title == '职业' && ! obj.name){
-            job_code = fenlei;
-        }else if(obj.title == '工种' && ! obj.name){
-            job_code = zhiye;
         }else if(obj.id == 'quyu'){
             quyu = obj.name;
         }else if(obj.id == 'gongzi'){
@@ -302,13 +302,54 @@
             }
         }
         var url = '<?php echo site_url('beckon/getBeckonsByParam'); ?>?job_code='+job_code+'&quyu='+quyu+'&gongzi='+gongzi+'&jiesuan='+jiesuan+'&fbsj='+fbsj+'&renzheng='+renzheng+'&xinyong='+xinyong;
-        console.log(url);
+        // console.log(url);
         $.get(url, function(str){
             // console.log(str);
-            // var data = eval('(' + str + ')');
-            // console.log(data);
+            var data = eval('(' + str + ')');
+            console.log(data);
+            var div = document.getElementById('beckons');
+            $(div).html('');
+            for(var i = 0 ; i < data.length ; i++){
+                $(div).append(
+                    '<div class="type">'+
+                        '<img src="'+
+                            data[i].coimg
+                        '" alt="" class="tx">'+
+                        '<div class="jieshao">'+
+                            '<div class="line1">'+
+                                '<a href="javascript:void(0);" class="name">'+
+                                    data[i].title+
+                                '</a>'+
+                                '<span class="vip">'+
+                                    (data[i].vip == 1 ? '<img src="/static/images/vip/vip1.png" alt=""/>' : '')+
+                                '</span>'+
+                                '<span class="identify">'+
+                                    (data[i].is_real == 1 ? '<img src="/static/images/renzheng/yingyezhiz.png" alt="">' : '')+
+                                '</span>'+
+                            '</div>'+
+                            '<span class="address">'+
+                                data[i].aera+' - '+data[i].address+
+                            '</span>'+
+                            '<div class="line3">'+
+                                '<span class="gs">'+
+                                    data[i].coname+
+                                '</span>'+
+                                '&nbsp;&nbsp;'+
+                                '<span class="sj">'+
+                                    getLocalTime(data[i].addtime)+
+                                '</span>'+
+                            '</div>'+
+                        '</div>'+
+                        '<span class="tel">'+
+                            data[i].mobile+
+                        '</span>'+
+                    '</div>'
+                );
+            }
         });
     }
-
+        function getLocalTime(nS) {     
+        return new Date(parseInt(nS) * 1000).toLocaleString().replace(/:\d{1,2}$/,' ');     
+    }     
 </script>
 </html>

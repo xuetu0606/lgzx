@@ -134,9 +134,9 @@
 				$renzheng_sql = "select uid from userlist where is_real=1";
 				$result = $this->db->query($renzheng_sql);
 				$query = $result->result_array();
-				echo '<pre>';
-				var_dump($query);
-				echo '</pre>';
+				// echo '<pre>';
+				// var_dump($query);
+				// echo '</pre>';
 				foreach($query as $item){
 					$sql.=" or u.uid=".$item['uid'];
 					// $array_renzheng[] = $item['uid'];
@@ -145,7 +145,7 @@
 			if($xinyong){
 				$sql.=" ORDER BY credit3 ";
 			}
-			return $sql;
+			// return $sql;
 	    	$result = $this->db->query($sql);
 			$list = $result->result_array();
 			for($i = 0 ; $i < count($list) ; $i++){
@@ -172,7 +172,7 @@
 				$name = $result->result_array();
 				$list[$i]['is_real'] = $name[0]['is_real'];
 			}
-			//return $list;
+			return $list;
 	    }
 		//查询一条数据
 		public function find($uid){

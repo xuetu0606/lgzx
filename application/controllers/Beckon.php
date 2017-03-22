@@ -19,13 +19,15 @@
 			//将一个数组遍历成一个个以key命名的值
 			extract($_REQUEST);
 			$list = $this->beckon_model->getBeckons($job_code,$quyu,$gongzi,$jiesuan,$fbsj,$renzheng,$xinyong);
-			// $str = json_encode($list);
-			// echo $str;
-			echo $list;
+			$str = json_encode($list);
+			echo $str;
+			// echo $list;
 		}
-		//打开招零工详情页
-		public function toBeckon(){
-
+		//零工详情
+		public function find(){
+			$uid = $this->uri->segment(3);
+			$data['news'] = $this->beckon_model->find($uid);
+			$this->load->view('beckon/beckon',$data);
 		}
 	}
 ?>
